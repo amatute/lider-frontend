@@ -1,15 +1,20 @@
 import React from 'react'
 import ProductItem from './ProductItem'
 
-const ProductList = ({products}) => {
+const ProductList = ({products, formSubmited}) => {
   return (
-    <ul>
-      { 
-        products.length > 0 && products.map(product => (
-          <ProductItem product={product} key={product.id}/>
-        ))
+    <div className="row">
+      { products.length === 0 &&
+        formSubmited &&
+        <h4 className='container'>No se encontraron productos 😢</h4>
       }
-    </ul>
+      <ul>
+        { products.length > 0 && products.map(product => (
+            <ProductItem product={product} key={product.id}/>
+          ))
+        }
+      </ul>
+    </div>
   )
 }
 

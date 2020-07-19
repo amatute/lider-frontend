@@ -4,14 +4,17 @@ import { API_URL } from '../utils/constants'
 import SearchForm from './SearchForm'
 import ProductList from './ProductList' 
 import Pagination from './Pagination'
+import { Navbar } from './Navbar'
 import axios from 'axios'
+import 'materialize-css/dist/css/materialize.min.css'
 
 export const SearchPage = () => {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [pages, setPages] = useState(0);
-  const [limit] = useState(5);
+  const [limit] = useState(4);
+  const [formSubmited, setFormSubmited] = useState(false);
 
   const handleSubmit = async ({input, page}) => {
     try {
@@ -21,20 +24,27 @@ export const SearchPage = () => {
       setProducts([...data.payload.products]);
       setCurrentPage(data.payload.currentPage);
       setPages(data.payload.pages);
+      setFormSubmited(true);
     } catch (error) {
       console.log('error:', error);
     }
   }
   return (
     <div>
-      <h1>Walmart - Search products</h1>
-      <SearchForm handleSubmit={handleSubmit}/>
-      <ProductList products={products}/>
-      <Pagination
-        productsPerPage={limit}
-        pages={pages}
-        paginate={handleSubmit}
-      />
+      <Navbar/>
+      <div className='container product-list'>
+        <SearchForm handleSubmit={handleSubmit}/>
+        <ProductList 
+          products={products}
+          formSubmited={formSubmited}
+        />
+        <Pagination
+          productsPerPage={limit}
+          pages={pages}
+          paginate={handleSubmit}
+        />
+      </div>
     </div>
+    
   )
 }

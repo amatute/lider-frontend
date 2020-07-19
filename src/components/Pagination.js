@@ -8,7 +8,7 @@ const Pagination = ({ pages, paginate }) => {
   }
 
   return (
-    <nav>
+    <div className="container" >
       <ul className="pagination">
         {pageNumbers.map(page => (
           <li key={page} className="page-item">
@@ -18,7 +18,7 @@ const Pagination = ({ pages, paginate }) => {
           </li>
         ))}
       </ul>
-    </nav>
+    </div>
   );
 };
 

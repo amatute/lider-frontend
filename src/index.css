@@ -12,8 +12,76 @@ code {
     monospace;
 }
 
+.logo{
+  margin-top: 8px;
+  margin-left: 70px;
+  height: 50px;
+  width: 50px;
+}
+
+.text-label {
+  font-weight: bold;
+  text-align: left;
+  margin-top: 5px !important;
+}
+
+.text-value {
+  text-align: left;
+}
+
 .pagination li {
   list-style-type: none;
   display: inline;
   font-size: large;
+}
+
+.container.product-list {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container.search-form {
+  margin-top: 50px;
+}
+
+.search-button {
+  margin-top: 20px;
+}
+
+.card-content {
+  padding: 10px !important;
+  padding-left: 15px !important;
+}
+
+.card-item.card-action{
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.center-cols > .col {
+  float:none; /* disable the float */
+  display: inline-block; /* make blocks inline-block */
+  text-align: initial; /* restore text-align to default */
+}
+
+.old-price {
+  text-decoration: line-through;
+} 
+
+.price {
+  font-weight: bold;
+  font-size: medium;
+}
+
+.discount-text {
+  color: white !important;
+  font-weight: bold;
+  font-size: medium;
+  background-color: red;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  
 }
