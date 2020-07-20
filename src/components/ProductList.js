@@ -6,7 +6,7 @@ const ProductList = ({products, formSubmited}) => {
     <div className="row">
       { products.length === 0 &&
         formSubmited &&
-        <h4 className='container'>No se encontraron productos 😢</h4>
+        <h4 className='container'>No se encontraron productos <span role="img" aria-label="crying face">😢</span></h4>
       }
       <ul>
         { products.length > 0 && products.map(product => (
