@@ -5,13 +5,13 @@ Before run this app with docker make sure you have the [lider-backend](https://g
 
 ## Run it with Docker
 1. Download or clone this repository.
-2. Navigate to the rool directory and build the docker image
+2. Navigate to the root directory and build the docker image.
 `$ docker build -t lider-frontend .`
 3. Now run the container with:
 ```
 $ docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true lider-frontend
 ```
-6. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+6. Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
