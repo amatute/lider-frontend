@@ -4,20 +4,12 @@ React web client for the lider-backend API.
 Before run this app with docker make sure you have the [lider-backend](https://github.com/amatute/lider-backend) set up and running with docker.
 
 ## Run it with Docker
-1. You will need Node.js and npm.
-3. Download or clone this repository.
-4. Navigate to the rool directory and build the docker image
+1. Download or clone this repository.
+2. Navigate to the rool directory and build the docker image
 `$ docker build -t lider-frontend .`
-5. Now run the container with:
+3. Now run the container with:
 ```
-$ docker run \
-    -it \
-    --rm \
-    -v ${PWD}:/app \
-    -v /app/node_modules \
-    -p 3000:3000 \
-    -e CHOKIDAR_USEPOLLING=true \
-    lider-frontend
+$ docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true lider-frontend
 ```
 6. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
